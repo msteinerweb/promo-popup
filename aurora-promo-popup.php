@@ -4,7 +4,7 @@
  * @wordpress-plugin
  * Plugin Name:       Promo Popup
  * Description:       Used to display a promo popup on the front end of the site.
- * Version:           1.0.5
+ * Version:           1.0.6
  * Author:            Matt Steiner
  * Text Domain:       aurora-promo-popup
  */
