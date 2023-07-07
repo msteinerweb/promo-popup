@@ -4,13 +4,33 @@
  * @wordpress-plugin
  * Plugin Name:       Promo Popup
  * Description:       Used to display a promo popup on the front end of the site.
- * Version:           1.0.4
+ * Version:           1.0.6
  * Author:            Matt Steiner
  * Text Domain:       aurora-promo-popup
  */
 
 // If this file is called directly, abort.
 if (!defined('WPINC')) die;
+
+
+/**
+ * Check for Website Plugin Updates
+ */
+require plugin_dir_path(__FILE__) . 'vendor/plugin-update-checker/plugin-update-checker.php';
+
+
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+    'https://github.com/msteinerweb/promo-popup/',
+    __FILE__,
+    'aurora-promo-popup'
+);
+
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('stable');
+
+
 
 function aurora_promo_popup_admin_enqueue_scripts($hook) {
     if ('toplevel_page_aurora-promo-popup' !== $hook) {
